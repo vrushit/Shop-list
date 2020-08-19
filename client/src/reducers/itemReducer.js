@@ -17,6 +17,8 @@ export default function (state = initialState, action) {
     case GET_ITEMS:
       return {
         ...state,
+        items: action.payload,
+        loading: false,
       };
 
     case DELETE_ITEM:
