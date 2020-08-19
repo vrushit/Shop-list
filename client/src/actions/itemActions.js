@@ -1,6 +1,8 @@
+import axios from "axios";
+
 import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from "./types";
 
-export const getItems = () => {
+export const getItems = () => (dispatch) => {
   return {
     type: GET_ITEMS,
   };
