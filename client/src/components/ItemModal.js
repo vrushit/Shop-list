@@ -19,6 +19,28 @@ class ItemModal extends Component {
     modal: false,
     name: "",
   };
+
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Button
+          color="dark"
+          style={{ marginBottom: "2rem" }}
+          onClick={this.toggle}
+        >
+          AddItem
+        </Button>
+
+        <Modal></Modal>
+      </div>
+    );
+  }
 }
 
 export default connect()(ItemModal);
