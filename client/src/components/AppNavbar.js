@@ -10,7 +10,6 @@ import {
   NavLink,
   Container,
 } from "reactstrap";
-import App from "../App";
 
 class AppNavbar extends Component {
   state = {

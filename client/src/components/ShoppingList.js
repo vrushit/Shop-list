@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import uuid from "react-uuid";
 import { connect } from "react-redux";
 import { getItems, deleteItem } from "../actions/itemActions";
 
@@ -57,8 +56,8 @@ ShoppingList.propTypes = {
   item: PropTypes.object.isRequired,
 };
 
-const maptateToProps = (state) => ({
+const mapstateToProps = (state) => ({
   item: state.item,
 });
 
-export default connect(maptateToProps, { getItems, deleteItem })(ShoppingList);
+export default connect(mapstateToProps, { getItems, deleteItem })(ShoppingList);

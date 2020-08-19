@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 
 import { connect } from "react-redux";
-import uuid from "react-uuid";
+
 import { addItem } from "../actions/itemActions";
 
 class ItemModal extends Component {
