@@ -3,7 +3,7 @@ import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import uuid from "react-uuid";
 import { connect } from "react-redux";
-import { getItems } from "../actions/itemActions";
+import { getItems, deleteItem } from "../actions/itemActions";
 
 import PropTypes from "prop-types";
 class ShoppingList extends Component {
@@ -19,6 +19,9 @@ class ShoppingList extends Component {
   componentDidMount() {
     this.props.getItems();
   }
+  onDeleteClick = (id) => {
+    this.props.deleteItem(id);
+  };
 
   render() {
     const { items } = this.props.item;
@@ -48,11 +51,7 @@ class ShoppingList extends Component {
                     className="remove-btn"
                     color="danger"
                     size="sm"
-                    onClick={() => {
-                      this.setState((state) => ({
-                        items: state.items.filter((item) => item.id !== id),
-                      }));
-                    }}
+                    onClick={this.onDeleteClick.bind(this, id)}
                   >
                     &times;
                   </Button>
@@ -76,4 +75,4 @@ const maptateToProps = (state) => ({
   item: state.item,
 });
 
-export default connect(maptateToProps, { getItems })(ShoppingList);
+export default connect(maptateToProps, { getItems, deleteItem })(ShoppingList);
