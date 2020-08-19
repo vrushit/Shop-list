@@ -12,3 +12,10 @@ export const deleteItem = (id) => {
     payload: id,
   };
 };
+
+export const addItem = (id) => {
+  return {
+    type: DELETE_ITEM,
+    payload: id,
+  };
+};
