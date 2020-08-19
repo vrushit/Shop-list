@@ -6,7 +6,7 @@ export const getItems = () => {
   };
 };
 
-export const deletItem = (id) => {
+export const deleteItem = (id) => {
   return {
     type: DELETE_ITEM,
     payload: id,
