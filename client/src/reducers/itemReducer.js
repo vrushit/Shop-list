@@ -1,9 +1,15 @@
 import uuid from "react-uuid";
 
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from "../actions/types";
+import {
+  GET_ITEMS,
+  ADD_ITEM,
+  DELETE_ITEM,
+  ITEMS_LOADING,
+} from "../actions/types";
 
 const initialState = {
   items: [],
+  loading: false,
 };
 
 export default function (state = initialState, action) {
